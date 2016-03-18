@@ -60,6 +60,8 @@
 	
 	var _tauchartsReact2 = _interopRequireDefault(_tauchartsReact);
 	
+	var _taucharts = __webpack_require__(160);
+	
 	var _lodash = __webpack_require__(166);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -82,7 +84,7 @@
 			interpolate: 'basis'
 		}],
 	
-		plugins: [tauCharts.api.plugins.get('trendline')({ showPanel: false })]
+		plugins: [_taucharts.api.plugins.get('trendline')({ showPanel: false })]
 	};
 	
 	var App = function (_React$Component) {
