@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TauChart from 'taucharts-react';
-import { api } from 'taucharts';
+import trendline from 'taucharts/plugins/tauCharts.trendline';
 import { times, identity } from 'lodash';
+
+import 'taucharts/css/tauCharts.css';
+import 'taucharts/plugins/tauCharts.trendline.css';
 
 const chartOptions = {
 	type: 'line',
@@ -19,7 +22,7 @@ const chartOptions = {
 	],
 
 	plugins: [
-		api.plugins.get('trendline')({ showPanel:false })
+		trendline({ showPanel:false })
 	]
 };
 

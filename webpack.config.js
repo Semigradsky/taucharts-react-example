@@ -1,4 +1,5 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 
@@ -11,10 +12,22 @@ module.exports = {
 		filename: 'build.js'
 	},
 
+	resolve: {
+		alias: {
+			taucharts$: 'taucharts/build/development/tauCharts.js',
+			taucharts: 'taucharts/build/development'
+		}
+	},
+
 	module: {
 		loaders: [
-			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel' }
+			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+			{ test: /\.css$/, loader: 'style!css' }
 		]
-	}
+	},
+
+	plugins: [new HtmlWebpackPlugin({
+		template: path.resolve(__dirname, 'src', 'index.html')
+	})]
 
 };
